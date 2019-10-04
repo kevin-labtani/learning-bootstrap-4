@@ -38,7 +38,8 @@ body {
   opacity: 0.8;
 }
 
-#home-section .fas {
+#home-section .fas,
+#create-section .fas {
   color: #008ed6;
   background: white;
   padding: 5px;
@@ -49,7 +50,7 @@ body {
 #explore-section .fas,
 #share-section .fas {
   background: #333;
-  color: white;
+  color: #008ed6;
   padding: 5px;
   border-radius: 5px;
 }
