@@ -21,9 +21,12 @@
     <title>Mizuxe</title>
   </head>
 
-  <body>
+  <body id="home" data-spy="scroll" data-target="#main-nav">
     <!-- navbar -->
-    <nav class="navbar navbar-expand-md navbar-light fixed-top py-4">
+    <nav
+      class="navbar navbar-expand-md navbar-light fixed-top py-4"
+      id="main-nav"
+    >
       <div class="container">
         <a href="#home" class="navbar-brand">
           <img src="./img/mlogo.png" width="50" height="50" alt="" />
@@ -397,6 +400,72 @@
       </div>
     </section>
 
+    <!-- contact -->
+    <section id="contact" class="bg-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9">
+            <h3>Get In Touch</h3>
+            <p class="lead">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Blanditiis, laborum.
+            </p>
+            <form>
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Name" />
+              </div>
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-envelope-open"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Email" />
+              </div>
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-pencil-alt"></i>
+                  </span>
+                </div>
+                <textarea
+                  class="form-control"
+                  placeholder="Message"
+                  rows="5"
+                ></textarea>
+              </div>
+              <input
+                type="submit"
+                value="submit"
+                class="btn btn-primary btn-block btn-lg"
+              />
+            </form>
+          </div>
+          <!-- align the logo to center with align self -->
+          <div class="col-lg-3 align-self-center">
+            <img src="./img/mlogo.png" alt="" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer id="main-footer" class="py-5 bg-primary text-white">
+      <div class="container">
+        <div class="row text-center">
+          <!-- align right with auto margin left -->
+          <div class="col-md-6 ml-auto">
+            <p class="lead">Copyright &copy; <span id="year"></span></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
@@ -418,6 +487,33 @@
       // jquery script to get the current year (eg. for copyright)
       // use <span id="year"></span> to get the year in the html code
       $("#year").text(new Date().getFullYear());
+
+      // init scrollspy
+      $("body").scrollspy({ target: "#main-nav" });
+
+      // Add smooth scrolling
+      $("#main-nav a").on("click", function(e) {
+        // Check for a hash value
+        if (this.hash !== "") {
+          // Prevent default behavior
+          e.preventDefault();
+
+          // Store hash
+          const hash = this.hash;
+
+          // Animate smooth scroll
+          $("html, body").animate(
+            {
+              scrollTop: $(hash).offset().top
+            },
+            800,
+            function() {
+              // Add hash to URL after scroll
+              window.location.hash = hash;
+            }
+          );
+        }
+      });
     </script>
   </body>
 </html>
