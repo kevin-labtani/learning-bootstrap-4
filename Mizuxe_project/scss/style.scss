@@ -33,3 +33,14 @@ body {
     height: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  // to get more of the showcase to show above the fold
+  #showcase {
+    min-height: 500px;
+
+    h1 {
+      font-size: 4rem;
+    }
+  }
+}
