@@ -9,7 +9,7 @@ body {
   opacity: 0.8;
 }
 
-/* custom css for home section */
+/* custom styling for home section */
 #home-section {
   background: url(../img/home.jpg);
   background-repeat: no-repeat;
@@ -41,6 +41,15 @@ body {
 #home-section .fas {
   color: #008ed6;
   background: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* custom styling for explore section */
+#explore-section .fas,
+#share-section .fas {
+  background: #333;
+  color: white;
   padding: 5px;
   border-radius: 5px;
 }
