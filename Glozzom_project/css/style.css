@@ -70,6 +70,11 @@ body {
   color: white;
 }
 
+#main-footer {
+  background: black;
+  color: white;
+}
+
 /* ABOUT.HTML */
 #page-header {
   height: 200px;
